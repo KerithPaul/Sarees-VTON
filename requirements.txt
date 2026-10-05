@@ -1,0 +1,37 @@
+# Saree generation system: local requirements
+# Python 3.10 on Windows, NVIDIA T1200 4 GB
+#
+# IMPORTANT: install PyTorch FIRST, separately, with this exact command:
+#   pip install torch==2.4.1 torchvision==0.19.1 --index-url https://download.pytorch.org/whl/cu121
+# Then run:  pip install -r requirements.txt
+
+# ---- numeric core (pin numpy below 2, several deps below still break on numpy 2) ----
+numpy==1.26.4
+scipy==1.14.1
+pillow==10.4.0
+
+# ---- diffusion stack ----
+diffusers==0.31.0
+transformers==4.46.3
+accelerate==1.1.1
+safetensors==0.4.5
+huggingface_hub==0.26.2
+peft==0.13.2
+
+# ---- image processing and warping ----
+opencv-python==4.10.0.84
+scikit-image==0.24.0
+
+# ---- background removal for the saree photo ----
+rembg==2.0.59
+onnxruntime==1.19.2
+
+# ---- utilities ----
+tqdm==4.67.0
+matplotlib==3.9.2
+
+# NOT installed on purpose:
+#   xformers        -> PyTorch 2.4 has built in SDPA attention, same benefit, no install pain
+#   bitsandbytes    -> only needed for training, and training runs on Colab
+#   onnxruntime-gpu -> conflicts with the CPU build, and rembg is fast enough on CPU
+#   controlnet-aux  -> we only use ControlNet Tile, which needs no preprocessor

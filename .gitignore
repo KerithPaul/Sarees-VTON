@@ -1,0 +1,99 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+
+# Virtualenv (this checkout's venv is ~5 GB)
+venv/
+.venv/
+env/
+ENV/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Downloaded weights (~9 GB). Recreate with:
+#   python download_models.py
+#   python fix_controlnet.py
+models/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.onnx
+*.h5
+*.pkl
+*.pickle
+
+# Generate / preprocess outputs
+outputs/
+check_output.png
+input/processed/
+
+# Datasets and archives (LoRA training data, old zips)
+dataset/
+datasets/
+data/raw/
+training_dataset.zip
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+# Hugging Face / torch leftovers if they land in the repo
+.cache/
+.huggingface/
+huggingface/
+*.lock
+*.incomplete
+
+# Test, coverage, type checkers
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Experiment logs
+wandb/
+runs/
+logs/
+*.log
+lightning_logs/
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# Local tool caches
+.code-review-graph/
+graphify-out/
+.grok/
