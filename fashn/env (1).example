@@ -1,0 +1,3 @@
+# FASHN API key — get yours free at https://fashn.ai
+# Copy this file to .env and replace the value below
+FASHN_API_KEY=fas_your_key_here
